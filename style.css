@@ -17,7 +17,7 @@
   text-transform: capitalize;
   outline: none;
   box-sizing: border-box;
-  transition: all linear .2s;
+  transition: all linear 0.2s;
 }
 
 html {
@@ -69,73 +69,16 @@ html {
 
 /* header navbar section start  */
 
-header {
-  width: 100%;
-  position: fixed;
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  z-index: 100;
-  background-image: url(navbg.png);
-  background-position: center;
-  background-repeat: repeat;
-
-}
-
-/* logo name  */
-
-header a {
-  padding: 0.2rem;
-  margin: 6px 0 0 6px;
-  color: rgb(2, 2, 31);
-  font-size: 3rem;
-}
-
-header a:hover {
-  color: rgb(113, 82, 199);
-
-}
-
-
-/* navbar link  */
-header .navbar ul {
-  display: flex;
   align-items: center;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0.2rem 0.5rem;
-  top: 0;
-  z-index: 100;
-}
-
-header .navbar ul li {
-  margin: 0 1rem;
-}
-
-header .navbar ul li a {
-  font-size: 1.5rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 600;
-  padding: 7px;
-  background-color: #1abc9c;
-  border-radius: 24px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0.2);
-  color: aliceblue;
-  transition: background 0.3s ease;
-  cursor: pointer;
-}
-
-header .navbar ul li a:hover {
-  color: var(--blue);
-  background-color: #1abc9c;
-  transform: scale(1.05)
-}
-
-header .fa-bars {
-  font-size: 3rem;
-  color: var(--blue);
-  cursor: pointer;
-  display: none;
+  background: url(navbg.png) center repeat;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 1000;
 }
 
 header .fa-times {
@@ -149,9 +92,119 @@ header .fa-times {
   box-shadow: .1rem .3rem rgba(0, 0, 0, .3);
 }
 
+.mainlogo{
+  height: 50px;
+  width:auto;
+
+  margin: 6px 0 0 6px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-center .dropdown {
+  position: relative;
+}
+
+.nav-center .dropdown > a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--blue);
+  background-color: #1abc9c;
+  padding: 0.7rem 1.5rem;
+  border-radius: 24px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.nav-center .dropdown > a:hover {
+  background-color: var(--white);
+  color:rgb(134, 134, 236);
+}
+
+.dropdown-content {
+  display:none;
+  position: absolute;
+  top: 100%;
+  
+  min-width: 160px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content li:hover{
+  background-color: #f0f0f0;
+  color:var(--blue)
+}
+.dropdown-content li {
+  list-style: none;
+  padding :1rem 1.5rem;
+  font-size: 1.4rem;
+  color:var(--black);
+  white-space: nowrap;
+  transition:background 0.3s;
+}
 
 
-/* header navbar section end  */
+.dropdown-content li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  color: var(--black);
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+  color:var(--blue);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-right .login-btn {
+  font-size: 1.4rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--blue);
+  color:whitesmoke;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-right .login-btn:hover {
+  background: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.nav-right i {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-right i:hover {
+  color:blueviolet;
+}
+
+/* header navbar section end */
 
 /* home section start  */
 
@@ -562,40 +615,35 @@ textarea:focus {
     font-size: 55%;
   }
 
-  header .fa-bars {
-    display: block;
+  header .fa-bars{
+    display:block;
   }
 
-  header .navbar {
+  header .navbar{
     position: fixed;
-    top: -100rem;
-    left: 0;
-    width: 100%;
-    background: var(--wight);
+    top:-100rem;
+    left:0;
+    width:100%;
+    background: blanchedalmond;
     opacity: 0;
   }
 
-  header .navbar ul {
+  header .navbar ul{
     flex-flow: column;
-    padding: 2rem 0;
+    padding:2rem 0;
   }
 
-  header .navbar ul li {
-    margin: 1rem 0;
-    width: 100%;
-    text-align: center;
+  header .navbar ul li{
+    margin:1rem 0;
+    width:100%;
+    text-align:center;
   }
 
-  header .navbar ul li a {
-    font-size: 3rem;
-    display: block;
+  header .nav-toggle{
+    top:5.5rem;
+    opacity:1;
   }
-
-  header .nav-toggle {
-    top: 5.5rem;
-    opacity: 1;
-  }
-
+  
   /* home media query  */
 
   .home .row {
